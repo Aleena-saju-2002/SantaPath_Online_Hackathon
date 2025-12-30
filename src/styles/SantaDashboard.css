@@ -1,0 +1,176 @@
+/* SantaDashboard.css */
+
+.dashboard-page {
+  min-height: 100vh;
+  background-color: var(--night-blue);
+  background: radial-gradient(circle at top, #1e3a8a 0%, #0f172a 80%);
+  padding: 40px 20px;
+  font-family: var(--font-body);
+  color: var(--christmas-cream);
+}
+
+.dashboard-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.dashboard-header h1 {
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  color: var(--christmas-gold);
+  text-shadow: 0 0 15px rgba(248, 178, 41, 0.4);
+  margin-bottom: 10px;
+}
+
+.dashboard-header p {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 1.1rem;
+}
+
+.no-kids-msg {
+  color: #fff;
+  text-align: center;
+  font-size: 1.5rem;
+  opacity: 0.5;
+}
+
+.stats-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.kid-report-card {
+  background: rgba(30, 41, 59, 0.7);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 30px;
+  width: 100%;
+  max-width: 380px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.kid-report-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.status-badge.in-progress {
+  background: rgba(248, 178, 41, 0.15);
+  color: var(--christmas-gold);
+  border: 1px solid rgba(248, 178, 41, 0.3);
+}
+
+.status-badge.complete {
+  background: rgba(46, 204, 113, 0.15);
+  color: #2ecc71;
+  border: 1px solid rgba(46, 204, 113, 0.3);
+}
+
+.age-tag {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.kid-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.kid-avatar {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 8px;
+  border-radius: 50%;
+  color: var(--christmas-cream);
+}
+
+.kid-name {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  color: var(--christmas-cream);
+  line-height: 1;
+}
+
+.wish-section {
+  background: rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  border-radius: 16px;
+  margin-bottom: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.wish-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--christmas-gold);
+  margin-bottom: 8px;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.wish-text {
+  font-style: italic;
+  font-size: 1.05rem;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.5;
+}
+
+/* Progress Bar */
+.progress-section {
+  margin-top: 20px;
+}
+
+.progress-info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.progress-bar-bg {
+  background: rgba(255, 255, 255, 0.1);
+  height: 8px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  background: linear-gradient(90deg, var(--christmas-red), var(--christmas-gold));
+  height: 100%;
+  border-radius: 10px;
+}
+
+.day-count {
+  font-size: 0.85rem;
+  margin-top: 10px;
+  color: rgba(255, 255, 255, 0.5);
+  text-align: right;
+}

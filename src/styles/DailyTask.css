@@ -1,0 +1,293 @@
+/* DailyTask.css - Premium Pleasant Theme (No Scroll) */
+
+.daily-task-page {
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--bg-primary);
+  background: radial-gradient(circle at bottom center, #1b4d3e 0%, #0a1f30 70%);
+  /* Significantly warmer/pleasanter gradient */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.content-wrapper {
+  width: 100%;
+  max-width: 1300px;
+  height: 100%;
+  position: relative;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 20px;
+  box-sizing: border-box;
+}
+
+/* Header */
+.page-header {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  text-align: center;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  margin: 0;
+  color: var(--christmas-gold);
+  text-shadow: 0 0 20px var(--christmas-gold-glow);
+  line-height: 1.2;
+}
+
+.progress-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.15);
+  /* Slightly lighter */
+  padding: 6px 16px;
+  border-radius: 50px;
+  margin-top: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  font-weight: 600;
+  color: var(--snow-white);
+  font-size: 0.9rem;
+}
+
+/* Layout */
+.main-layout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  gap: 2rem;
+  flex: 1;
+}
+
+/* 🌲 Tree Section - Scalable */
+.tree-section {
+  position: relative;
+  width: 45vh;
+  /* Scale with viewport height */
+  height: 60vh;
+  /* Scale with viewport height */
+  max-width: 600px;
+  max-height: 800px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tree-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+/* SVG Lines */
+.tree-connections {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Background glow behind tree */
+.tree-glow-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120%;
+  height: 120%;
+  background: radial-gradient(circle, rgba(253, 224, 71, 0.2) 0%, rgba(34, 197, 94, 0.2) 40%, transparent 70%);
+  /* Brighter, pleasanter glow */
+  filter: blur(50px);
+  z-index: 0;
+  opacity: 0.9;
+}
+
+.tree-star {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  transition: all 0.4s ease;
+}
+
+.star-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* The actual star SVG stroke handled in JS, but glow here */
+.star-glow-effect {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  box-shadow: 0 0 20px var(--christmas-gold);
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 10%, transparent 70%);
+}
+
+.tree-star.top-special .star-wrapper {
+  filter: drop-shadow(0 0 30px var(--christmas-gold));
+}
+
+.star-num {
+  font-size: 0.7rem;
+  margin-top: 1px;
+  color: rgba(255, 255, 255, 0.6);
+  /* More visible */
+  font-weight: bold;
+}
+
+.tree-star.lit .star-num {
+  color: var(--christmas-gold);
+  text-shadow: 0 0 5px black;
+}
+
+/* Current Day Pulse */
+.tree-star.current-pulse .star-wrapper {
+  box-shadow: 0 0 30px #f87171;
+  /* Softer red pulse */
+  border-radius: 50%;
+}
+
+/* 🃏 Task Card - Floating Glass */
+.task-glass-card {
+  width: 100%;
+  max-width: 380px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.05));
+  /* Lighter glass */
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 24px;
+  padding: 30px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  animation: float 5s ease-in-out infinite;
+  margin-bottom: 2rem;
+}
+
+.card-ribbon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background: linear-gradient(90deg, var(--christmas-gold), var(--christmas-red), var(--christmas-gold));
+}
+
+.task-icon-circle {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--christmas-red), #ef4444);
+  /* Brighter red */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 20px rgba(220, 38, 38, 0.5);
+  margin-bottom: 15px;
+  position: relative;
+  z-index: 2;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+}
+
+.task-icon-circle svg {
+  margin-top: 0;
+}
+
+.task-glass-card h3 {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  color: var(--christmas-gold);
+  margin-bottom: 0.5rem;
+  margin-top: 0;
+  letter-spacing: 1px;
+}
+
+.task-content {
+  font-size: 1.15rem;
+  line-height: 1.5;
+  color: var(--snow-white);
+  margin-bottom: 2rem;
+  min-height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-style: italic;
+}
+
+/* Button */
+.complete-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  /* Brighter Green */
+  color: white;
+  border: none;
+  padding: 16px;
+  border-radius: 16px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(34, 197, 94, 0.4);
+  font-family: var(--font-body);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.complete-btn:hover {
+  filter: brightness(1.1);
+  transform: scale(1.02);
+}
+
+/* Responsive Scaling */
+@media (max-width: 1000px) {
+  .main-layout {
+    flex-direction: column-reverse;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .tree-section {
+    width: 70vw;
+    height: 45vh;
+  }
+
+  .task-glass-card {
+    max-width: 90%;
+    padding: 20px;
+    margin-bottom: 1rem;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+}
