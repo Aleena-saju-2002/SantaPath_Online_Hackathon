@@ -73,7 +73,28 @@ To access the **Santa Dashboard**, use the following "Top Secret" credentials on
 
 ## 📸 Screenshots
 
-*(Add your screenshots here)*
+### Landing Page
+![Landing Page](./screenshorts/landing.png)
+
+### Kid Start Page
+![Kid Start](./screenshorts/kidstart.png)
+
+### Daily Task Page
+![Daily Task](./screenshorts/dailytask.png)
+
+### Santa Login Page
+![Santa Login](./screenshorts/santalogin.png)
+
+### Santa Dashboard
+![Santa Dashboard](./screenshorts/santadash.png)
+
+### Final Page
+![Final Page](./screenshorts/finalpage.png)
+
+### Wish Page
+![Wish Page](./screenshorts/wish.png)
+
+
 
 ---
 
